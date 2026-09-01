@@ -28,6 +28,7 @@ public class AccountMapper {
         entity.setId(domain.id());
         entity.setUserId(domain.userId());
         entity.setName(domain.name());
+        entity.setCreatedAt(domain.createdAt());
 
         return entity;
     }
