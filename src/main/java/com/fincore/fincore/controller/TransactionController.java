@@ -1,10 +1,7 @@
 package com.fincore.fincore.controller;
 
-import com.fincore.fincore.dto.CategoryResponse;
-import com.fincore.fincore.dto.CreateCategoryRequest;
 import com.fincore.fincore.dto.CreateTransactionRequest;
 import com.fincore.fincore.dto.TransactionResponse;
-import com.fincore.fincore.entity.Transaction;
 import com.fincore.fincore.service.TransactionService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
