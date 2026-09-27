@@ -23,6 +23,10 @@ public class Category {
     @Column(name = "monthly_budget")
     private BigDecimal monthlyBudget;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     public Category() {
     }
 

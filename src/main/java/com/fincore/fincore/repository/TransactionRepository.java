@@ -9,6 +9,6 @@ import java.util.UUID;
 
 public interface TransactionRepository extends JpaRepository<Transaction, UUID> {
     List<Transaction> findByCategoryId(UUID categoryId);
-
-    Example<? extends Transaction> id(UUID id);
+    List<Transaction> findByUserId(UUID userId);
+    List<Transaction> findByCategoryIdAndUserId(UUID categoryId, UUID userId);
 }

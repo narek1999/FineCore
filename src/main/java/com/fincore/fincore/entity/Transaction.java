@@ -32,16 +32,18 @@ public class Transaction {
 
     private String description;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private OffsetDateTime createdAt;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public Transaction() {
     }
 
     @PrePersist
-    public void checkData() {
-        if (createdAt == null) {
-            createdAt = OffsetDateTime.now();
-        }
+    protected void onCreate() {
+        this.createdAt = OffsetDateTime.now();
     }
 }
